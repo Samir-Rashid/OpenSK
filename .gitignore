@@ -2,6 +2,7 @@ libraries/**/Cargo.lock
 target/
 /build/
 /py_virtual_env/
+venv/
 
 # Local installation of elf2tab.
 /elf2tab/

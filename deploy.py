@@ -451,13 +451,14 @@ class OpenSKInstaller:
 
   def generate_crypto_materials(self, force_regenerate: bool):
     """Calls a shell script that generates cryptographic material."""
-    has_error = subprocess.call([
-        os.path.join("tools", "gen_key_materials.sh"),
-        "Y" if force_regenerate else "N",
-    ])
-    if has_error:
-      error(("Something went wrong while trying to generate ECC "
-             "key and/or certificate for OpenSK"))
+    # has_error = subprocess.call([
+    #     os.path.join("tools", "gen_key_materials.sh"),
+    #     "Y" if force_regenerate else "N",
+    # ])
+    # if has_error:
+    #   error(("Something went wrong while trying to generate ECC "
+    #          "key and/or certificate for OpenSK"))
+    print("hi")
 
   def create_tab_file(self, binary_names: Dict[str, str]):
     """Checks and uses elf2tab to generated an TAB file out of the binaries."""
@@ -747,7 +748,7 @@ class OpenSKInstaller:
       return 0
 
     if self.args.check_patches:
-      subprocess.run(["./maintainers/patches", "check"], check=False)
+      subprocess.run(["bash", "./maintainers/patches", "check"], check=False)
 
     # Compile what needs to be compiled
     board_props = SUPPORTED_BOARDS[self.args.board]
