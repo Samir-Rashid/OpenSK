@@ -28,7 +28,8 @@ PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
 
     # export OPENSSL_INCLUDE_DIR="/nix/store/186zrvnvshgqlzzkqsy2r0nvdbj6cakw-openssl-3.0.14-dev/include"
   shellHook = ''
-
+    unset OBJCOPY
+    unset OBJDUMP
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
