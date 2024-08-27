@@ -37,4 +37,10 @@ PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   '';
 }
 # export PATH="/home/mod/Documents/github/OpenSK/elf2tab/bin/:/$PATH"
-# python3 deploy.py --board=nrf52840dk_opensk --opensk --disable-check-patches --verbose-build
+# python3 deploy.py --board=nrf52840dk_opensk --opensk --disable-check-patches --verbose-build --panic-console --debug
+
+
+# Terminal 1
+# JLinkExe -device nrf52 -if swd -speed 1000 -autoconnect 1
+# Terminal 2
+# JLinkRTTClient
